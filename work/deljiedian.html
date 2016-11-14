@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="添加" id="btn">
+	<ul id="list">
+		<li>苹果</li>
+		<li>香梨</li>
+		<li>葡萄</li>
+	</ul>
+	<script>
+		var otxt = document.querySelector("#txt");
+		var obtn = document.querySelector("#btn");
+		var oul = document.querySelector("#list");
+		var ali = document.querySelectorAll("#list li");
+		obtn.onclick = function(){
+			var value = otxt.value;
+			var oli = document.createElement("li");
+			var txt = document.createTextNode(value);
+			oli.appendChild(txt);
+			oul.appendChild(oli);
+		}
+
+		oul.onclick = function(event){
+			if(event.target.tagName === "LI"){
+			oul.removeChild(event.target);
+			}
+		}
+
+
+		// for(var i = 0;i<ali.length;i++){
+		// 	ali[i].onclick = function(){
+		// 		oul.removeChild(this);
+		// 	}
+		// }
+	</script>
+</body>
+</html>

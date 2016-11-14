@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<input id="hide" type="button" value="隐藏">
+	<input id="show" type="button" value="显示">
+	<input id="slideUp" type="button" value="上卷">
+	<input id="slideDown" type="button" value="下拉">
+	<input id="fadeOut" type="button" value="渐入">
+	<input id="fadeIn" type="button" value="检出">
+	<input id="toggle" type="button" value="切换图片">
+	<input id="slideToggle" type="button" value="切换图片">
+	<input id="fadeToggle" type="button" value="切换图片">
+	<div class="box"></div>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#hide").click(function(){
+					$(".box").hide(500)
+		})
+		$("#show").click(function(){
+					$(".box").show(500)
+		})
+		$("#slideUp").click(function(){
+					$(".box").slideUp(500)
+		})
+		$("#slideDown").click(function(){
+					$(".box").slideDown(500)
+		})
+		$("#fadeOut").click(function(){
+					$(".box").fadeOut(500)
+		})
+		$("#fadeIn").click(function(){
+					$(".box").fadeIn(500)
+		})
+		$("#toggle").click(function(){
+					$(".box").toggle(500)
+		})
+		$("#slideToggle").click(function(){
+					$(".box").slideToggle(500)
+		})
+		$("#fadeToggle").click(function(){
+					$(".box").fadeToggle(500)
+		})
+	</script>
+	
+</body>
+</html>

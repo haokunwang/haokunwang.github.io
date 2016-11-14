@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.clear{
+			clear: both;
+		}
+		.picbox{
+			width: 500px;
+			height: 300px;
+			border: 1px solid red;
+			overflow: hidden;
+		}
+		.piclist{
+			width: 2500px;
+		}
+		.piclist li{
+			list-style: none;
+			float: left;
+		}
+		.piclist img{
+			width: 500px;
+			height: 300px;
+		}
+		.list li{
+			height: 20px;
+			width: 30px;
+			border: 1px solid #aaa;
+			text-align: center;
+			line-height: 20px;
+			cursor: pointer;
+			float: left;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="picbox">
+		<ul class="piclist">
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+			<li><img src="images/5.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		var n = 0;
+		function fun(){
+			n++;
+			n= n===5?0:n;
+			$(".piclist").animate({
+				"margin-left":n * -500
+			},1000)
+		};
+		$(".list li").mouseenter(function(){
+			clearInterval(t);
+		}).mouseleave(function(){
+			t = setInterval(fun,2000);
+		}).click(function(){
+			var ind = $(this).index();
+			n = ind;
+			$(".piclist").animate({
+				"margin-left":ind * -500
+			},1000)
+		});
+
+
+		var t = setInterval(fun,2000);
+
+
+	</script>
+</body>
+</html>
