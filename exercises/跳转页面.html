@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p><span class="seconds">5</span>秒跳转至百度</p>
+	<script src="script/jquery.js"></script>
+	<script>
+		var seconds = 5;
+		function fun(){
+			seconds--;
+			$(".seconds").text(seconds);
+			if(seconds === 0){
+			location.href = "http://baidu.com"
+			}
+		}
+		setInterval(fun,1000);
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.nav li{
+			float: left;
+			width:80px;
+			height:30px;
+			list-style: none;
+			text-align: center;
+			line-height: 30px;
+			border:1px solid black;
+			overflow: hidden;
+		}
+		.nav span{
+			display: block;
+			width:80px;
+			height:30px;
+			background-color: #0f0;
+		}
+		.nav a{
+			display: block;
+			width:80px;
+			height:30px;
+			background-color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li>
+			<div>
+				<span>视频</span><a href="">视频</a>
+			</div>
+		</li>
+		<li>
+			<div>
+				<span>动画</span><a href="">动画</a>
+			</div>
+		</li>
+		<li>
+			<div>
+				<span>游戏</span><a href="">游戏</a>
+			</div>
+		</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".nav div").mouseenter(function(){
+			$(this).animate({"margin-top":-30},2000);
+		}).mouseleave(function(){
+			$(this).animate({"margin-top":0},2000);
+		})
+	</script>
+</body>
+</html>

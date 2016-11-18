@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span class="num">0</span>
+	<button class="start">开始</button>
+	<button class="stop">停止</button>
+	<script src="script/jquery.js"></script>
+	<script>
+		var number = 0
+		function fun(){
+			number++;
+			$(".num").text(number);
+		}
+		var t = setInterval(fun,100);
+		
+		$(".stop").click(function(){
+			clearInterval(t)
+		})
+		$(".start").click(function(){
+			t = setInterval(fun,100)
+		})
+	</script>
+	
+</body>
+</html>
